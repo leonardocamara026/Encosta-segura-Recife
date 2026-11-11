@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EncostaSegura Recife</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Ícones do FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="header-content">
+            <h1><i class="fa-solid fa-house-chimney-crack"></i> EncostaSegura Recife</h1>
+            <p>Informação e ajuda para proteger você e sua família.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Alerta de Chuva -->
+        <section class="alert-box orange-alert">
+            <h3><i class="fa-solid fa-cloud-showers-heavy"></i> Alerta - Nível Laranja</h3>
+            <p>Chuva forte nas próximas 24h. Até 80 mm previstos. Moradores de encostas devem ficar atentos.</p>
+        </section>
+
+        <!-- Menu Principal -->
+        <section class="menu-grid">
+            <button class="menu-btn btn-red" onclick="navigateTo('emergencia')">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <span>Emergência</span>
+            </button>
+
+            <button class="menu-btn btn-blue" onclick="navigateTo('registrar-risco')">
+                <i class="fa-solid fa-camera"></i>
+                <span>Registrar Risco</span>
+            </button>
+
+            <button class="menu-btn btn-green" onclick="navigateTo('mapa')">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <span>Mapa</span>
+            </button>
+
+            <button class="menu-btn btn-teal" onclick="navigateTo('abrigos')">
+                <i class="fa-solid fa-house-medical"></i>
+                <span>Abrigos</span>
+            </button>
+
+            <button class="menu-btn btn-purple" onclick="navigateTo('preciso-ajuda')">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+                <span>Preciso de Ajuda</span>
+            </button>
+
+            <button class="menu-btn btn-pink" onclick="navigateTo('doacoes')">
+                <i class="fa-solid fa-heart"></i>
+                <span>Doações</span>
+            </button>
+
+             <button class="menu-btn btn-gray" onclick="navigateTo('documentos')">
+                <i class="fa-solid fa-id-card"></i>
+                <span>Documentos Perdidos</span>
+            </button>
+
+             <button class="menu-btn btn-yellow" onclick="navigateTo('auxilios')">
+                <i class="fa-solid fa-sack-dollar"></i>
+                <span>Auxílios</span>
+            </button>
+        </section>
+    </main>
+
+    <!-- Barra Inferior -->
+    <nav class="bottom-nav">
+        <a href="#" class="active"><i class="fa-solid fa-house"></i> Início</a>
+        <a href="#"><i class="fa-solid fa-map"></i> Mapa</a>
+        <a href="#"><i class="fa-solid fa-clipboard-list"></i> Protocolos</a>
+    </nav>
+
+    <script src="app.js"></script>
+</body>
+</html>
