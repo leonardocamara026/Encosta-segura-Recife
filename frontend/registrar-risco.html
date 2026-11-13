@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Risco - EncostaSegura</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 600px; margin: 0 auto;">
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            <h2>Registrar Risco</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <form id="form-risco" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+            
+            <label style="font-weight: bold; color: #0056b3; display: block; margin-bottom: 10px;">1. Localização</label>
+            <input type="text" id="endereco" placeholder="Endereço completo" required style="width: 100%; padding: 12px; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ccc;">
+            <button type="button" onclick="obterLocalizacao()" style="width: 100%; padding: 10px; margin-bottom: 20px; background: #e3f2fd; color: #0d47a1; border: 1px solid #90caf9; border-radius: 8px; cursor: pointer;">Usar Localização Atual</button>
+
+            <label style="font-weight: bold; color: #0056b3; display: block; margin-bottom: 10px;">2. Problema</label>
+            <select id="tipo-ocorrencia" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+                <option value="">Selecione...</option>
+                <option value="barreira">Risco de Barreira</option>
+                <option value="rachadura">Rachadura</option>
+            </select>
+
+            <label style="font-weight: bold; color: #0056b3; display: block; margin-bottom: 10px;">3. Descrição</label>
+            <textarea id="descricao" rows="3" style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;"></textarea>
+
+            <button type="submit" style="width: 100%; padding: 15px; background: #43a047; color: white; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">Enviar Registro</button>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>

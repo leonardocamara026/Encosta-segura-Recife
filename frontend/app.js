@@ -1,33 +1,58 @@
 function navigateTo(page) {
-    if (page === 'registrar-risco') {
+    if (page === 'emergencia') {
+        if(confirm("Deseja ligar agora para a Defesa Civil (199)?")) {
+            window.location.href = 'tel:199';
+        }
+    } else if (page === 'registrar-risco') {
         window.location.href = 'registrar-risco.html';
     } else if (page === 'abrigos') {
         window.location.href = 'abrigos.html';
+    } else if (page === 'doacoes') {
+        window.location.href = 'doacoes.html';
     } else {
-        alert(`A tela de ${page.replace('-', ' ').toUpperCase()} será construída em breve!`);
+        alert(`A tela de ${page.replace('-', ' ').toUpperCase()} está em desenvolvimento!`);
     }
 }
 
-// Função da tela de Registrar Risco
 function obterLocalizacao() {
     const inputEndereco = document.getElementById('endereco');
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(
             (position) => {
-                const lat = position.coords.latitude;
-                const lon = position.coords.longitude;
-                inputEndereco.value = `Lat: ${lat.toFixed(5)}, Lon: ${lon.toFixed(5)} (Localização Atual)`;
+                inputEndereco.value = `Lat: ${position.coords.latitude.toFixed(5)}, Lon: ${position.coords.longitude.toFixed(5)} (Localização Atual)`;
             },
-            () => {
-                alert('Não foi possível obter a localização. Digite manualmente.');
-            }
+            () => { alert('Não foi possível obter a localização. Digite manualmente.'); }
         );
-    } else {
-        alert('Geolocalização não suportada.');
     }
 }
 
-// Função da tela de Abrigos
 function abrirMapa() {
     alert("Iniciando GPS... Redirecionando para a rota mais segura no mapa.");
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const formRisco = document.getElementById('form-risco');
+    if (formRisco) {
+        formRisco.addEventListener('submit', async (evento) => {
+            evento.preventDefault(); 
+            const pacote = {
+                endereco: document.getElementById('endereco').value,
+                tipo: document.getElementById('tipo-ocorrencia').value,
+                descricao: document.getElementById('descricao').value
+            };
+            try {
+                const resposta = await fetch('http://localhost:3000/registrar', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(pacote)
+                });
+                const resultado = await resposta.json();
+                alert(`${resultado.mensagem}\nSeu número de protocolo é: ${resultado.protocolo}`);
+                formRisco.reset();
+                window.location.href = 'index.html';
+            } catch (erro) {
+                alert('Erro de conexão: Verifique se o servidor backend está ligado!');
+            }
+        });
+    }
+});
