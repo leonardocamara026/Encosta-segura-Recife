@@ -1,0 +1,86 @@
+/* reaproveitando o header-nav do registrar-risco */
+.header-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.back-btn {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.info-text {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 0.95rem;
+}
+
+.abrigo-card {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    margin-bottom: 15px;
+}
+
+.abrigo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.abrigo-header h3 {
+    font-size: 1rem;
+    color: #0056b3;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.badge {
+    padding: 5px 8px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+}
+
+.badge.open { background-color: #43a047; }
+.badge.full { background-color: #e53935; }
+
+.abrigo-card p {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.btn-rota {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #1e88e5;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn-rota:hover { background-color: #1565c0; }
+
+.btn-disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+}
+
+.btn-disabled:hover { background-color: #bdbdbd; }

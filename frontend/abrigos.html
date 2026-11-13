@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abrigos Próximos - EncostaSegura</title>
+    <!-- Reaproveitamos o estilo base e adicionamos o estilo específico desta tela -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="abrigos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <header class="top-bar">
+        <div class="header-nav">
+            <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            <h2>Abrigos Próximos</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <p class="info-text">Encontre os locais de acolhimento seguros mais próximos de você ativados pela Prefeitura do Recife.</p>
+        
+        <!-- Primeiro Abrigo (Com vagas) -->
+        <div class="abrigo-card">
+            <div class="abrigo-header">
+                <h3><i class="fa-solid fa-school"></i> Escola Municipal de Água Fria</h3>
+                <span class="badge open">Aberto Agora</span>
+            </div>
+            <p><i class="fa-solid fa-location-dot"></i> Rua Alto do Pascoal, S/N - Água Fria</p>
+            <p><i class="fa-solid fa-bed"></i> Vagas: 45 disponíveis</p>
+            <button class="btn-rota" onclick="abrirMapa()"><i class="fa-solid fa-route"></i> Traçar Rota Segura</button>
+        </div>
+
+        <!-- Segundo Abrigo (Lotado) -->
+        <div class="abrigo-card">
+            <div class="abrigo-header">
+                <h3><i class="fa-solid fa-church"></i> Igreja Matriz de Casa Amarela</h3>
+                <span class="badge full">Lotação Máxima</span>
+            </div>
+            <p><i class="fa-solid fa-location-dot"></i> Rua Padre Lemos, 44 - Casa Amarela</p>
+            <p><i class="fa-solid fa-bed"></i> Vagas: 0 disponíveis</p>
+            <button class="btn-rota btn-disabled" disabled><i class="fa-solid fa-route"></i> Traçar Rota Segura</button>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
