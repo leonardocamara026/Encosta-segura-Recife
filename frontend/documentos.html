@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos Perdidos - EncostaSegura Recife</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header class="top-bar">
+        <div style="display: flex; align-items: center; justify-content: space-between; max-width: 600px; margin: 0 auto;">
+            <a href="index.html" style="color: white; text-decoration: none; font-weight: bold;"><i class="fa-solid fa-arrow-left"></i> Voltar</a>
+            <h2>Documentos Perdidos</h2>
+        </div>
+    </header>
+
+    <main class="container">
+        <div style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08); margin-bottom: 20px;">
+            <h3 style="color: #0056b3; margin-bottom: 10px;"><i class="fa-solid fa-id-card"></i> Central de Achados e Perdidos</h3>
+            <p style="color: #555; font-size: 0.95rem;">Perdeu ou encontrou documentos durante uma ocorrência de risco? Registe aqui para facilitar a devolução à comunidade.</p>
+        </div>
+
+        <form id="form-documento" style="background: white; padding: 20px; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.08);">
+            
+            <label style="font-weight: bold; color: #0056b3; display: block; margin-bottom: 10px;">Nome do Proprietário</label>
+            <input type="text" id="nome-doc" placeholder="Nome completo que consta no documento" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc;">
+
+            <label style="font-weight: bold; color: #0056b3; display: block; margin-bottom: 10px;">Tipo de Documento</label>
+            <select id="tipo-doc" required style="width: 100%; padding: 12px; margin-bottom: 15px; border-radius: 8px; border: 1px solid #ccc;">
+                <option value="">Selecione...</option>
+                <option value="rg">RG</option>
+                <option value="cpf">CPF</option>
+                <option value="cnh">CNH</option>
+                <option value="cartao-sus">Cartão SUS</option>
+                <option value="outro">Outro</option>
+            </select>
+
+            <label style="font-weight: bold; color: #0056b3; display: block; margin-bottom: 10px;">Local onde foi perdido/encontrado</label>
+            <input type="text" id="local-doc" placeholder="Ex: Comunidade de Passarinho, Rua Principal" required style="width: 100%; padding: 12px; margin-bottom: 20px; border-radius: 8px; border: 1px solid #ccc;">
+
+            <button type="submit" style="width: 100%; padding: 15px; background: #0056b3; color: white; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: bold; cursor: pointer;">Cadastrar Documento</button>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
